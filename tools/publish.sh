@@ -21,7 +21,10 @@ ZIP="$TARGET_COOKIECUTTER.zip"
 
 # Zip cookiecutter and drop off in /publish dir in root of repo
 cd $COOKIECUTTER_DIR
-zip -r --quiet $ZIP $TARGET_COOKIECUTTER
+zip -r --quiet $ZIP $TARGET_COOKIECUTTER \
+    --exclude "*.DS_Store" "*.terraform" \
+    "*.terraform/*" "*.terraform.lock.hcl"
+
 mkdir -p "$PUBLISH_DIR"
 mv $ZIP "$PUBLISH_DIR/$ZIP"
 
