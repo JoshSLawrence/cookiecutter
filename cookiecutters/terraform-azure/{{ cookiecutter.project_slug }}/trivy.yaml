@@ -1,0 +1,12 @@
+misconfiguration:
+  scanners:
+    - terraform
+    - terraformplan-json
+    - terraformplan-snapshot
+
+  terraform:
+    exclude-downloaded-modules: false
+    # NOTE: Optional - set to n-number of var files as needed
+    # vars: ["terraform.tfvars"]
+
+exit-code: 1
