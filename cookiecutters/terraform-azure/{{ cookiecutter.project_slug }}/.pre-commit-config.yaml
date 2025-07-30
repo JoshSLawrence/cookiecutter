@@ -2,8 +2,18 @@ repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.99.5 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
     hooks:
-      - id: terraform_fmt
-      - id: terraform_docs
-      - id: terraform_validate
-      - id: terraform_tflint
-      - id: terraform_trivy
+      - id: terraform_fmt{% if cookiecutter.use_opentofu == "yes" %}
+        args:
+          - --hook-config=--tf-path=tofu{% endif %}
+      - id: terraform_docs{% if cookiecutter.use_opentofu == "yes" %}
+        args:
+          - --hook-config=--tf-path=tofu{% endif %}
+      - id: terraform_validate{% if cookiecutter.use_opentofu == "yes" %}
+        args:
+          - --hook-config=--tf-path=tofu{% endif %}
+      - id: terraform_tflint{% if cookiecutter.use_opentofu == "yes" %}
+        args:
+          - --hook-config=--tf-path=tofu{% endif %}
+      - id: terraform_trivy{% if cookiecutter.use_opentofu == "yes" %}
+        args:
+          - --hook-config=--tf-path=tofu{% endif %}
