@@ -9,7 +9,7 @@
   "use_opentofu": ["yes", "no"],
   "terraform_or_tofu_version": ">= 1.10.2",
   "azure_provider_version": ">= 4.35.0",
-  "azure_subscription_id": "",
   "azure_region": "eastus2",
+  "tests_azure_subscription_id": "",
   "_copy_without_render": ["*.terraform-docs.yml"]
 }
