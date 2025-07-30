@@ -10,7 +10,7 @@ variables {
 provider "azurerm" {
   # NOTE: Replace subscription_id with the actual Azure subscription ID
   # where you intend to run tests.
-  subscription_id = "{{ cookiecutter.azure_subscription_id }}"
+  subscription_id = "{{ cookiecutter.tests_azure_subscription_id }}"
   features {}
 }
 
