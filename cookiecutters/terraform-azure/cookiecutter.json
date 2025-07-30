@@ -1,15 +1,15 @@
 {
-  "create_git_repo": ["yes", "no"],
-  "use_git_hooks": ["yes", "no"],
-  "author": "Anonymous",
-  "project_name": "Example Module",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-  "short_project_description": "",
   "is_config_or_module": ["config", "module"],
   "use_opentofu": ["yes", "no"],
   "terraform_or_tofu_version": ">= 1.10.2",
   "azure_provider_version": ">= 4.35.0",
   "azure_region": "eastus2",
+  "project_name": "Example Module",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "short_project_description": "",
+  "author": "Anonymous",
+  "create_git_repo": ["yes", "no"],
+  "use_git_hooks": ["yes", "no"],
   "tests_azure_subscription_id": "",
   "_copy_without_render": ["*.terraform-docs.yml"]
 }
