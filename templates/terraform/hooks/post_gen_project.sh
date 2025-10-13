@@ -5,37 +5,37 @@ COLOR_YELLOW='\033[0;33m'
 COLOR_RED='\033[0;31m'
 COLOR_RESET='\033[0m'
 
+echo -e "\n${COLOR_YELLOW}Installing Required Tools via Mise${COLOR_RESET}\n"
+mise install || exit 1
+
 # Init
-if [ {{ cookiecutter.use_opentofu }} = "yes" ]; then
-    echo -e "\n${COLOR_YELLOW}Initializing opentofu project${COLOR_RESET}\n"
+if [ "{{ cookiecutter.use_opentofu }}" == "True" ]; then
+    echo -e "\n${COLOR_YELLOW}Initializing OpenTofu Project${COLOR_RESET}\n"
     tofu init
+    tofu fmt -list=false
 else
-    echo -e "\n${COLOR_YELLOW}Initializing terraform project${COLOR_RESET}\n"
+    echo -e "\n${COLOR_YELLOW}Initializing Terraform Project${COLOR_RESET}\n"
     terraform init
+    terraform fmt -list=false
 fi
 
 # Doc generation
-echo -e "\n${COLOR_YELLOW}Generating terraform docs${COLOR_RESET}\n"
+echo -e "\n${COLOR_YELLOW}Generating Documentation${COLOR_RESET}\n"
 terraform-docs .
 
 # Git and Hook setup
-if [ {{ cookiecutter.create_git_repo }} = "yes" ]; then
-    echo -e "\n${COLOR_YELLOW}Initializing git repo${COLOR_RESET}\n"
-    git init
+echo -e "\n${COLOR_YELLOW}Initializing Git Repo${COLOR_RESET}\n"
+git init
+echo -e "\n${COLOR_YELLOW}Installing Git Hooks${COLOR_RESET}\n"
+pre-commit install
 
-    if [ {{ cookiecutter.use_git_hooks }} = "yes" ]; then
-        echo -e "\n${COLOR_YELLOW}Setting up pre-commit hooks${COLOR_RESET}\n"
-        pre-commit install
-        git add .
-        pre-commit run -a
-    else
-        rm ".pre-commit-config.yaml"
-        git add .
-    fi
-else
-    rm ".gitignore"
-    rm ".pre-commit-config.yaml"
-fi
-
+# Hooks should run when the commit is attempted
+echo -e "\n${COLOR_YELLOW}Creating Inital Commit${COLOR_RESET}\n"
+git add .
+git commit -m "feat: projected generated from cookiecutter template"
 
 echo -e "\n${COLOR_GREEN}Project Generation Complete${COLOR_RESET}\n"
+
+echo -e "\nNote: Depending on options selected, you will need to satisfy input 
+variables in order to run a successful plan or test based on this template. Review 
+the state of variables.tf and tests/test.tftest.hcl to see if applicable.\n"

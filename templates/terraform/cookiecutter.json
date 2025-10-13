@@ -1,15 +1,16 @@
 {
-  "is_config_or_module": ["config", "module"],
-  "use_opentofu": ["yes", "no"],
-  "terraform_or_tofu_version": ">= 1.10.2",
-  "azure_provider_version": ">= 4.35.0",
-  "azure_region": "eastus2",
-  "project_name": "Example Module",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-  "short_project_description": "",
+  "use_opentofu": true,
+  "use_azure_provider": true,
+  "project_name": "Example",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "short_project_description": "{{ 'Example OpenTofu Module' if cookiecutter.use_opentofu == true else 'Example Terraform Module' }}",
   "author": "Anonymous",
-  "create_git_repo": ["yes", "no"],
-  "use_git_hooks": ["yes", "no"],
-  "tests_azure_subscription_id": "",
+  "_defaults": {
+    "version_azure_provider": ">= 4.47.0",
+    "version_opentofu": ">= 1.10.6",
+    "version_terraform": ">= 1.13.3",
+    "version_azure_naming": "0.4.2",
+    "region_azure": "eastus2"
+  },
   "_copy_without_render": ["*.terraform-docs.yml"]
 }

@@ -59,23 +59,8 @@ check_command() {
 
 echo -e "${COLOR_YELLOW}\nRunning project generation pre-checks\n${COLOR_RESET}"
 
-if [ {{ cookiecutter.use_opentofu }} = "yes" ]; then
-    check_command tofu
-else
-    check_command terraform
-fi
-
-check_command terraform-docs
-check_command tflint
-check_command trivy
-
-if [ {{ cookiecutter.create_git_repo }} = "yes" ]; then
-    check_command git
-
-    if [ {{ cookiecutter.use_git_hooks }} = "yes" ]; then
-        check_command pre-commit
-    fi
-fi
+check_command git
+check_command mise
 
 if [ "$PASS" = true ]; then
     echo -e "${COLOR_GREEN}\nAll checks passed. Proceeding with project generation\n${COLOR_RESET}"
