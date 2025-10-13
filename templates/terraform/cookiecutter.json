@@ -1,0 +1,16 @@
+{
+  "use_opentofu": true,
+  "use_azure_provider": true,
+  "project_name": "Example",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "short_project_description": "{{ 'Example OpenTofu Module' if cookiecutter.use_opentofu == true else 'Example Terraform Module' }}",
+  "author": "Anonymous",
+  "_defaults": {
+    "version_azure_provider": ">= 4.47.0",
+    "version_opentofu": ">= 1.10.6",
+    "version_terraform": ">= 1.13.3",
+    "version_azure_naming": "0.4.2",
+    "region_azure": "eastus2"
+  },
+  "_copy_without_render": ["*.terraform-docs.yml"]
+}

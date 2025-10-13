@@ -13,9 +13,10 @@ cd $(dirname $0)
 
 ROOT_DIR=$(git rev-parse --show-toplevel)
 PUBLISH_DIR="$ROOT_DIR/publish"
-COOKIECUTTER_DIR="$ROOT_DIR/cookiecutters"
+COOKIECUTTER_DIR="$ROOT_DIR/templates"
 
 # Prompt for cookiecutter to zip for publish
+echo $COOKIECUTTER_DIR
 TARGET_COOKIECUTTER=$(ls $COOKIECUTTER_DIR | fzf --prompt="Select a cookiecutter to publish ❯ ")
 ZIP="$TARGET_COOKIECUTTER.zip"
 
@@ -29,3 +30,7 @@ mkdir -p "$PUBLISH_DIR"
 mv $ZIP "$PUBLISH_DIR/$ZIP"
 
 echo -e "${GREEN}[PUBLISHED]${RESET_COLOR} Cookiecutter ${YELLOW}$TARGET_COOKIECUTTER${RESET_COLOR} to ${YELLOW}$PUBLISH_DIR/$ZIP${RESET_COLOR}"
+
+# Run cookiecutter
+cd $ROOT_DIR
+cookiecutter "$PUBLISH_DIR/$ZIP"

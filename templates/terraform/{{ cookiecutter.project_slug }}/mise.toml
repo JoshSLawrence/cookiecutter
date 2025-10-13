@@ -1,0 +1,10 @@
+[tools]
+{% if cookiecutter.use_opentofu == true %}
+opentofu = "latest"
+{% else %}
+terraform = "latest"
+{% endif %}
+terraform-docs = "latest"
+trivy = "latest"
+pre-commit = "latest"
+tflint = "latest"
