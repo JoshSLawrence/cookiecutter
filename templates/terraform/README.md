@@ -1,4 +1,4 @@
-# terraform-azure
+# terraform
 
 This cookiecutter provisions a module project defaulting to the Azure provider.
 

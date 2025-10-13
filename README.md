@@ -27,9 +27,9 @@ cookiecutter "https://github.com/joshslawrence/cookiecutter" \
 
 This cookiecutter serves a starting point for terraform modules.
 
-- [Terraform cookiecutter README.md](./cookiecutters/terraform-azure/README.md)
+- [Terraform cookiecutter README.md](./cookiecutters/terraform/README.md)
 
 ```bash
 cookiecutter "https://github.com/joshslawrence/cookiecutter" \
-    --directory="templates/terraform-azure"
+    --directory="templates/terraform"
 ```
