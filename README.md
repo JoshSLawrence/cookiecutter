@@ -13,16 +13,6 @@ A collection of my homemade cookiecutters.
 
 A list of cookiecutters provided by this project and how to use them.
 
-### Demo
-
-This cookiecutter serves as an example cookiecutter.
-It was created following [the official documentation](https://cookiecutter.readthedocs.io/en/stable/tutorials/tutorial2.html).
-
-```bash
-cookiecutter "https://github.com/joshslawrence/cookiecutter" \
-    --directory="templates/demo"
-```
-
 ### Terraform
 
 This cookiecutter serves a starting point for terraform modules.
