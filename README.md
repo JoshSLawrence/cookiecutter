@@ -1,6 +1,6 @@
 # Cookiecutter
 
-A collection of my self-created cookiecutters.
+A collection of my homemade cookiecutters.
 
 ## Usage
 
@@ -9,24 +9,27 @@ A collection of my self-created cookiecutters.
 - Pass the `--directory` argument pointing to the cookiecutter you wish to use.
 - All available cookiecutters in this repository are located in `cookiecutters`.
 
-### Example
-
-```bash
-cookiecutter "https://github.com/joshslawrence/cookiecutter" \
-    --directory="cookiecutters/demo" # Replace 'demo' with cookiecutter of choice
-```
-
 ## Available Cookiecutters
 
-A list of cookiecutters provided by this project.
+A list of cookiecutters provided by this project and how to use them.
 
 ### Demo
 
 This cookiecutter serves as an example cookiecutter.
 It was created following [the official documentation](https://cookiecutter.readthedocs.io/en/stable/tutorials/tutorial2.html).
 
+```bash
+cookiecutter "https://github.com/joshslawrence/cookiecutter" \
+    --directory="templates/demo"
+```
+
 ### Terraform
 
 This cookiecutter serves a starting point for terraform modules.
 
 - [Terraform cookiecutter README.md](./cookiecutters/terraform-azure/README.md)
+
+```bash
+cookiecutter "https://github.com/joshslawrence/cookiecutter" \
+    --directory="templates/terraform-azure"
+```
