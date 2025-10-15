@@ -7,6 +7,7 @@ COLOR_RESET='\033[0m'
 
 echo -e "\n${COLOR_YELLOW}Installing Required Tools via Mise${COLOR_RESET}\n"
 mise install || exit 1
+mise upgrade || exit 1
 
 # Init
 if [ "{{ cookiecutter.use_opentofu }}" == "True" ]; then
