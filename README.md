@@ -19,9 +19,9 @@ A list of cookiecutters provided by this project and how to use them.
 
 This cookiecutter serves a starting point for terraform modules.
 
-- [Terraform cookiecutter README.md](./templates/terraform/README.md)
+- [OpenTofu cookiecutter README.md](./templates/opentofu/README.md)
 
 ```bash
 cookiecutter "https://github.com/joshslawrence/cookiecutter" \
-    --directory="templates/terraform"
+    --directory="templates/opentofu"
 ```
