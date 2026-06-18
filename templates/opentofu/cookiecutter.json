@@ -1,0 +1,19 @@
+{
+  "project_name": "Example",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "short_project_description": "Example OpenTofu Module",
+  "author": "Anonymous",
+  "azure_region": "eastus2",
+  "subscription_id": "",
+  "opentofu_version": "latest",
+  "azurerm_version": "latest",
+  "azure_naming_version": "latest",
+  "terraform_docs_version": "latest",
+  "trivy_version": "latest",
+  "precommit_version": "latest",
+  "tflint_version": "latest",
+  "precommit_hooks_version": "latest",
+  "precommit_terraform_version": "latest",
+  "tflint_azurerm_version": "latest",
+  "_copy_without_render": ["*.terraform-docs.yml"]
+}

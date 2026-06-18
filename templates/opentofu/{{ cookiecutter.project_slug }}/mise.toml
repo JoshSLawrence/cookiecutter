@@ -1,0 +1,6 @@
+[tools]
+opentofu = "OPENTOFU_VERSION"
+terraform-docs = "TERRAFORM_DOCS_VERSION"
+trivy = "TRIVY_VERSION"
+pre-commit = "PRECOMMIT_VERSION"
+tflint = "TFLINT_VERSION"

@@ -1,5 +1,5 @@
 tflint {
-  required_version = ">= 0.58.1"
+  required_version = ">= TFLINT_VERSION"
 }
 
 config {
@@ -24,12 +24,6 @@ config {
 
 plugin "azurerm" {
   enabled = true
-  version = "0.28.0"
+  version = "TFLINT_AZURERM_VERSION"
   source  = "github.com/terraform-linters/tflint-ruleset-azurerm"
-}
-
-# NOTE: This is the only rule not enabled by default from the azurerm rulset
-rule "azurerm_resource_missing_tags" {
-  enabled = true
-  tags    = ["owner", "purpose"]
 }
