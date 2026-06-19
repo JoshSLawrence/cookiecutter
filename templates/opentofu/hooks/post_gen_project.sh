@@ -201,7 +201,6 @@ echo ""
 # Trust the mise config file
 mise trust || true
 mise install || exit 1
-mise upgrade || exit 1
 
 # Init
 echo ""
