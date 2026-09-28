@@ -1,0 +1,17 @@
+misconfiguration:
+  scanners:
+    - terraform
+    - terraformplan-json
+    - terraformplan-snapshot
+
+  terraform:
+    exclude-downloaded-modules: false
+
+# Single source of truth for the failure threshold, so local runs and CI fail
+# on the same findings.
+severity:
+  - CRITICAL
+  - HIGH
+  - MEDIUM
+
+exit-code: 1

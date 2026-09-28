@@ -1,0 +1,10 @@
+[tools]
+# Used by the pre-commit hooks and as the default opentofu_version for
+# `mise run new-module`. Modules can pin their own in their mise.toml.
+opentofu = "{{ cookiecutter.opentofu_version }}"
+cookiecutter = "{{ cookiecutter._tools.cookiecutter }}"
+pre-commit = "{{ cookiecutter._tools['pre-commit'] }}"
+shellcheck = "{{ cookiecutter._tools.shellcheck }}"
+terraform-docs = "{{ cookiecutter._tools['terraform-docs'] }}"
+tflint = "{{ cookiecutter._tools.tflint }}"
+trivy = "{{ cookiecutter._tools.trivy }}"

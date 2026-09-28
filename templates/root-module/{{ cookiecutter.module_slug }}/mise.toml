@@ -1,0 +1,5 @@
+[tools]
+opentofu = "{{ cookiecutter.opentofu_version }}"
+terraform-docs = "{{ cookiecutter._tools['terraform-docs'] }}"
+tflint = "{{ cookiecutter._tools.tflint }}"
+trivy = "{{ cookiecutter._tools.trivy }}"

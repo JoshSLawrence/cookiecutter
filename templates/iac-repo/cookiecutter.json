@@ -1,0 +1,34 @@
+{
+  "repo_name": "Example IaC",
+  "repo_slug": "{{ cookiecutter.repo_name.lower().replace(' ', '-') }}",
+  "description": "OpenTofu infrastructure as code",
+  "modules_dir": "iac",
+  "opentofu_version": "1.9.0",
+  "__prompts__": {
+    "repo_name": "Repository name",
+    "repo_slug": "Repository directory name",
+    "description": "Short description",
+    "modules_dir": "Directory for modules, relative to the repo root",
+    "opentofu_version": "OpenTofu version (pinned in mise.toml, default for new modules)"
+  },
+  "_tools": {
+    "cookiecutter": "2.7.1",
+    "pre-commit": "4.6.2",
+    "shellcheck": "0.11.0",
+    "terraform-docs": "0.24.0",
+    "tflint": "0.64.0",
+    "trivy": "0.74.0"
+  },
+  "_precommit_revs": {
+    "pre-commit-hooks": "v6.0.0",
+    "pre-commit-terraform": "v1.109.1",
+    "shellcheck-py": "v0.11.0.1"
+  },
+  "_copy_without_render": [
+    "mise-tasks/apply.sh",
+    "mise-tasks/break-lease.sh",
+    "mise-tasks/new-module.sh",
+    "mise-tasks/plan.sh",
+    "mise-tasks/test.sh"
+  ]
+}
