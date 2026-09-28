@@ -1,0 +1,33 @@
+{
+  "module_name": "Example",
+  "module_slug": "{{ cookiecutter.module_name.lower().replace(' ', '-') }}",
+  "description": "Example OpenTofu root module",
+  "opentofu_version": "1.9.0",
+  "use_azurerm": true,
+  "use_azapi": false,
+  "use_azuread": false,
+  "use_random": false,
+  "__prompts__": {
+    "module_name": "Module name",
+    "module_slug": "Module directory name",
+    "description": "Short description",
+    "opentofu_version": "Minimum OpenTofu version (also pinned in mise.toml)",
+    "use_azurerm": "Use the azurerm provider?",
+    "use_azapi": "Use the azapi provider?",
+    "use_azuread": "Use the azuread provider?",
+    "use_random": "Use the random provider?"
+  },
+  "_tools": {
+    "terraform-docs": "0.24.0",
+    "tflint": "0.64.0",
+    "trivy": "0.74.0"
+  },
+  "_tflint_ruleset_azurerm_version": "0.32.0",
+  "_providers": {
+    "azurerm": { "source": "hashicorp/azurerm", "version": "5.7.0" },
+    "azapi": { "source": "azure/azapi", "version": "2.13.0" },
+    "azuread": { "source": "hashicorp/azuread", "version": "3.10.0" },
+    "random": { "source": "hashicorp/random", "version": "3.9.1" }
+  },
+  "_copy_without_render": ["*.terraform-docs.yaml"]
+}

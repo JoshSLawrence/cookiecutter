@@ -1,0 +1,33 @@
+# Local .terraform directories
+.terraform/
+
+# State files: state lives in each root module's remote backend, and local
+# state can contain secrets
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+
+# Saved plans can contain secrets
+*.tfplan
+tfplan
+
+# Variable files often hold secrets. To commit a non-secret one, add a
+# negated pattern (e.g. !{{ cookiecutter.modules_dir }}/network/hub/terraform.tfvars).
+*.tfvars
+*.tfvars.json
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration
+.terraformrc
+terraform.rc
+
+.DS_Store

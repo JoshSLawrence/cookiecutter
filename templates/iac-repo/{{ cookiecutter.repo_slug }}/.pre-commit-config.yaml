@@ -1,0 +1,36 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: {{ cookiecutter._precommit_revs['pre-commit-hooks'] }}
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=500"]
+      - id: trailing-whitespace
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: {{ cookiecutter._precommit_revs['pre-commit-terraform'] }}
+    hooks:
+      - id: terraform_fmt
+        args:
+          - --hook-config=--tf-path=tofu
+      - id: terraform_docs
+        # Examples are run by hand, not documented
+        exclude: /examples/
+        args:
+          - --hook-config=--tf-path=tofu
+      - id: terraform_validate
+        # Examples call modules by remote source, which can't resolve until
+        # the module is published
+        exclude: /examples/
+        args:
+          - --hook-config=--tf-path=tofu
+      - id: terraform_tflint
+        args:
+          - --hook-config=--tf-path=tofu
+      - id: terraform_trivy
+        args:
+          - --hook-config=--tf-path=tofu
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: {{ cookiecutter._precommit_revs['shellcheck-py'] }}
+    hooks:
+      - id: shellcheck
+        # -x: follow `source` into mise-tasks/lib/common.sh
+        args: ["-x"]
