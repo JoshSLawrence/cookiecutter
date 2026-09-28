@@ -1,0 +1,3 @@
+# Ignore the iac/ subdirectory which is example infrastructure code
+# and requires separate TFLint plugin initialization
+iac/
